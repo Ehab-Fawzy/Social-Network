@@ -1,4 +1,5 @@
 
+
 public abstract class user {
 	private String firstName  , lastName , userName , password , email , gender , date , country;
 	private Boolean isPremiumAccount = false , logged_in = false;
