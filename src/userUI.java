@@ -27,9 +27,21 @@ public class userUI {
 		return controller.signUp(object);
 	}
 	
+	public static boolean DeleteUser( String userName ) { 
+		return true;
+	}
+	
+	public static boolean EditAccount( String userName ) { 
+		return true;
+	}
+	
 	public static String login( String userName , String Password ) {
 		String ret = controller.Login(userName, Password);
 		return ret;
+	}
+	
+	public static Vector<String> getUserInfo( String userName ){
+		return null;
 	}
 	
 	public static void logOut( String userName ) {

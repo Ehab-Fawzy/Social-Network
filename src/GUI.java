@@ -1,6 +1,3 @@
-/*
-
-
 import java.awt.Component;
 import java.awt.EventQueue;
 
@@ -78,7 +75,7 @@ public class GUI {
 	private static JButton btnLogout;
 	private static JButton btnShowNotifications;
 	private static JButton upgrade;
-	private static JComboBox gender , requestBox;
+	private static JComboBox gender , requestBox , type;
 	
 	private String currentUserName = "" , searchUserName = "";
 	private JButton backR;
@@ -269,7 +266,14 @@ public class GUI {
 						String dataS		= bdate.getText();
 						String countryS		= country.getText();
 						
-						boolean ret = UI.signUp(firstName, lastName, userName, passwordS, emailS, genders, dataS, countryS);
+						Boolean ret;
+						if ( type.getSelectedIndex() == 0 ) {
+							ret = NormalUserUI.signUp(firstName, lastName, userName, passwordS, emailS, genders, dataS, countryS,false);
+						}
+						else {
+							ret = PremiumUserUI.signUp(firstName, lastName, userName, passwordS, emailS, genders, dataS, countryS,false);
+							NormalUserUI.upgradeAccount(userName);
+						}
 						
 						if ( ret ) {
 							GUI.showMessage( "signed up successfully" , "info");
@@ -309,7 +313,7 @@ public class GUI {
 				backSignUp.setBounds(372, 264, 105, 23);
 				signupP.add(backSignUp);
 				
-				JComboBox type = new JComboBox();
+				type = new JComboBox();
 				type.setModel(new DefaultComboBoxModel(new String[] {"Normal", "Premium"}));
 				type.setBounds(125, 264, 105, 22);
 				signupP.add(type);
@@ -617,7 +621,7 @@ public class GUI {
 		upgrade = new JButton("ugrade to premium");
 		upgrade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				boolean ret = UI.upgradeAccount(currentUserName);
+				boolean ret = NormalUserUI.upgradeAccount(currentUserName);
 				if ( ret ) {
 					showMessage("Account upgraded successfully", "info");
 					upgrade.setEnabled(false);
@@ -824,4 +828,3 @@ public class GUI {
 	}
 }
 
-*/

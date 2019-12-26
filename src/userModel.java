@@ -8,9 +8,6 @@ public class userModel {
 	private static final HashMap< String , Vector<String>> notifications = new HashMap<String, Vector<String>>();
 	private static final HashMap< String , Vector<user>> friendList = new HashMap<String, Vector<user>>();
 	
-	public userModel() {
-		
-	}
 
 	public Vector<String> getAllNotification( String userName ){
 		return notifications.get(userName);

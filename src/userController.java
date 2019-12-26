@@ -1,10 +1,10 @@
-
+ 
 
 import java.util.Vector;
 
 public class userController {
 	public static final userModel model = new userModel();
-	
+	 
 	public static boolean signUp( user object ) {
 		
 		if ( model.isUserNameExist( object.getUserName() ) == true ) {
@@ -14,6 +14,22 @@ public class userController {
 			model.addUser(object);
 		}
 		return true;
+	}
+	
+	public static boolean isValidUser( user object ) {
+		return true;
+	}
+	
+	public static boolean DeleteUser( String userName ) { 
+		return true;
+	}
+	
+	public static boolean EditAccount( String userName ) { 
+		return true;
+	}
+	
+	public static Vector<String> getUserInfo( String userName ){
+		return null;
 	}
 	
 	public static String Login( String userName , String password ) {
@@ -110,8 +126,21 @@ public class userController {
 		return model.deleteFriendRequest(unFrom, unTo);
 	}
 	
-	public static Boolean DeleteRequest( String unFrom , String unTo ) {
+	public static boolean DeleteRequest( String unFrom , String unTo ) {
 		model.sendNotification(unTo, unFrom + " Delete the Friend Request");
 		return model.deleteFriendRequest(unFrom, unTo);
 	}
+	
+	public static boolean yearPay( String userName ) {
+		return true;
+	}
+	
+	public static boolean create_AD( String header , String headLines , String Descriptions , String userName ) {
+		return true;
+	}
+	
+	public static boolean create_AD_Validation( String header , String headLines , String Descriptions , String userName ) {
+		return true;
+	}
+	
 }
