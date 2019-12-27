@@ -1,6 +1,10 @@
 
 public class PostControl {
 	
+	public boolean AddPost ( Post Object ) {
+		return true;
+	}
+	
 	public boolean CheckHashtags ( Post Object ) {
 		return true;
 	}
