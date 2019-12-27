@@ -122,6 +122,7 @@ public class userController {
 	
 	public static boolean AcceptRequest( String unFrom , String unTo) {
 		model.addToFriendList(unFrom, unTo);
+		model.addToFriendList(unTo, unFrom);
 		model.sendNotification(unTo, unFrom + " Accepte the Friend Request");
 		return model.deleteFriendRequest(unFrom, unTo);
 	}

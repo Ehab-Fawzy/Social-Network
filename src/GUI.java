@@ -1,15 +1,9 @@
-import java.awt.Component;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
-import sun.awt.windows.WLightweightFramePeer;
-import sun.rmi.log.LogInputStream;
-import sun.rmi.log.LogOutputStream;
 
 import java.awt.Font;
 import javax.swing.JPanel;
